@@ -1,18 +1,37 @@
 package com.fitness.bmiservice.datalayer;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+
+import com.fitness.bmiservice.constants.FileNameConstants;
+import com.fitness.bmiservice.utils.PropertyValues;
 
 public class BasicDataLayer {
 	
-	Connection connection;
+	Connection connection = null;
+	Properties configProperties = null;
+	
+	public BasicDataLayer(){
+		try {
+			configProperties = (new PropertyValues()).getPropertyValues(FileNameConstants.FILE_NAME_CONFIG_PROPERTIES);
+		} catch (IOException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+	}
 
 	public Connection getConnection() throws SQLException{
 		
+		String dbUrl = configProperties.getProperty("dbConnUrl");
+		String user = configProperties.getProperty("user");
+		String password =configProperties.getProperty("password");
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/try", "root", "root");
+			connection = DriverManager.getConnection(dbUrl, user, password);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println(e);
