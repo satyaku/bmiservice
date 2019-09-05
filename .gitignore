@@ -1,0 +1,40 @@
+.metadata
+surefire-reports/
+bin/
+target/
+tmp/
+*.tmp
+*.bak
+*.log
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+
+
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+#tgz files (Helm Chart Package)
+*.tgz
+
+.sonarlint/
