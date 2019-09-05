@@ -27,10 +27,11 @@ public class BasicDataLayer {
 		
 		String dbUrl = configProperties.getProperty("dbConnUrl");
 		String user = configProperties.getProperty("user");
-		String password =configProperties.getProperty("password");
+		String password = configProperties.getProperty("password");
+		String systemClass = configProperties.getProperty("systemClass");
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(systemClass);
 			connection = DriverManager.getConnection(dbUrl, user, password);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
