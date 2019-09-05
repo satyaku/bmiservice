@@ -6,7 +6,6 @@ import java.util.List;
 import com.fitness.bmiservice.datalayer.AccountManagementDL;
 import com.fitness.bmiservice.datatypes.Member;
 import com.fitness.bmiservice.datatypes.OperationResponse;
-import com.fitness.bmiservice.implementation.InternalRestClient;
 
 public class AccountManagement {
 	
@@ -47,9 +46,6 @@ public class AccountManagement {
 		
 		return getDL().getAccountById(username);
 		
-		/*List<Member> members = (List<Member>) new InternalRestClient().getAllAccounts();
-		Member member = new Member();
-		return member;*/
 	}
 
 }

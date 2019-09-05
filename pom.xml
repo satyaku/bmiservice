@@ -56,19 +56,6 @@
 			<version>8.0.15</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-			<version>4.5.1</version>
-		</dependency>
-
-
 	</dependencies>
 	<properties>
 		<jersey.version>2.16</jersey.version>
